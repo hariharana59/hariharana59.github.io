@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Oven</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #d5c8b1d4;
+            color: #1a1818cd;
+            padding: 10px 0;
+            text-align: center;
+            font-family:'Trebuchet MS';
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+            color: #2e2b2b;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: url("images/main.png") no-repeat center center/cover;
+            color: #f9f5f5;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .cta {
+            padding: 10px 20px;
+            background:#F1D3CE;
+            color: #1e1d1da8;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+            background-color: #fff;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background-color: #F8EDE3;
+            padding: 20px;
+            flex-basis: 30%;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item h3 {
+            color: #3b3737;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: #373333;
+            margin-bottom: 15px;
+        }
+
+        .service-item .cta {
+            background-color:#F1D3CE;
+            color: #363232e0;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-section {
+            display: flex;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+            flex-wrap: wrap;
+        }
+
+        .blog-item {
+            flex-basis: 48%;
+            margin: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+
+        .blog-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-item p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .blog-item .cta {
+            background-color: #F1D3CE;
+            color: #3b3636;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .call-to-action {
+            background-color: #f8c89475;
+            color: #544b4b;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 10px;
+        }
+
+        .call-to-action a {
+            color: #4d4545;
+            padding: 10px 20px;
+            background: #F1D3CE;;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            background:#F5DAD2;
+            color: #847171;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        footer .footer-column {
+            flex-basis: 30%;
+            margin: 10px;
+            text-align: left;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            color:#392f2e;
+        }
+
+        footer p {
+            color: #504a4a;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #332e2e;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .services, .blog-section {
+                flex-direction: column;
+            }
+
+            .service-item, .blog-item, .footer-column {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fresh Oven</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Breads</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Welcome to Fresh Oven! </h1>
+            <p>Experience the warmth of freshly baked goodness from our oven to your heart!</p>
+            <a href="#" class="cta">Learn More</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="service-item">
+            <img src="images/service1.png" height="300px">
+            <h3>Muffins & Scones</h3>
+            <p>Blueberry muffins, lemon poppy seed scones.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/service2.png" height="300px">
+            <h3>Cookies</h3>
+            <p>Chocolate chip, oatmeal raisin, macarons, shortbread.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/service3.png" height="300px">
+            <h3>Pastries</h3>
+            <p>Croissants, danishes, turnovers, eclairs.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="blog-item">
+            <img src="images/rest1.png" height="300px">
+            <h3>Sweet Crumbs Bakery</h3>
+            <p>At Sweet Crumbs Bakery, every bite melts in your mouth, delivering a perfect blend of sweetness and comfort.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="blog-item">
+            <img src="images/rest2.png" height="300px">
+            <h3>Golden Oven</h3>
+            <p>Golden Oven offers a taste of tradition, where every item is baked to golden perfection, rich in flavor and warmth</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="blog-item">
+            <img src="images/rest3.png" height="300px">
+            <h3>The Flour Haven</h3>
+            <p>The Flour Haven is a paradise of flavor, where each treat is crafted to delight your senses with pure, homemade goodness.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="blog-item">
+            <img src="images/rest4.png" height="300px">
+            <h3>Crust & Crumble</h3>
+            <p>Crust & Crumble serves up the perfect balance of texture and taste, where every crumb is packed with deliciousness</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Are you a restaurant owner?</h2>
+        <p>Contact us for a meaningful review for your restaurant</p>
+        <br>
+        <a href="#">Get in Touch</a>
+    </section>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Whether you're a home cook, a foodie, or simply someone who loves to explore new flavors, our blog offers mouthwatering recipes,
+                    culinary tips, and food stories that will inspire your next meal. </p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: info@freshoven.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <p>&copy; 2024 fresh oven. All rights reserved.</p>
+    </footer>
+</body>
+</html>
